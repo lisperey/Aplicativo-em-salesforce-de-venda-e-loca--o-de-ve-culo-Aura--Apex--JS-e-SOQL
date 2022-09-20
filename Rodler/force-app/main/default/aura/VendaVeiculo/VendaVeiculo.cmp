@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable, force:hasRecordId" access="global" controller="VendaVeiculo">
+    <aura:attribute name="cliente" type="Id" />
+    <aura:attribute name="sede" type="Id" />
+    <aura:attribute name="veiculo" type="Id" />
+    <aura:attribute name="quantidade" type="Integer" />
+
+    <aura:import library="lightning:confirm" property="LightningConfirm" />
+
+
+    <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Atividade__c">
+
+    
+        <lightning:inputField fieldName="Cliente__c" value="{!v.cliente}"/>
+        <lightning:inputField fieldName="Veiculo__c" value="{!v.veiculo}" />
+        <lightning:input label="Quantidade de Veículo" value="{!v.quantidade}"/>
+        <lightning:inputField fieldName="Sede__c" value="{!v.sede}" />
+
+
+        <lightning:button  class="slds-m-top_small" label="Processar Venda" onclick="{!c.pegar}" />
+        
+    </lightning:recordEditForm>
+    
+    
+</aura:component>	

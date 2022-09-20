@@ -1,0 +1,28 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable, force:hasRecordId" access="global" controller="CadastroCliente">
+    <aura:attribute name="nomeDoCliente" type="String" />
+    <aura:attribute name="CPF" type="String" />
+    <aura:attribute name="telefone" type="String" />
+    <aura:attribute name="sede" type="Id" />
+    <aura:attribute name="email" type="String" />
+    <aura:attribute name="endereco" type="String" />
+
+    
+   
+    <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Atividade__c">
+        <lightning:inputField  fieldName="Name" value="{!v.nomeDoCliente}"/>
+        <lightning:inputField  fieldName="CPF__c" value="{!v.CPF}"/>
+        <lightning:inputField  fieldName="Telefone__c" value="{!v.telefone}"/>
+        <lightning:inputField  fieldName="E_mail__c" value="{!v.email}"/>
+        <lightning:inputField  fieldName="Enderecoo__c" value="{!v.endereco}"/>
+        <lightning:inputField  fieldName="Sede__c" value="{!v.sede}"/>
+
+        <lightning:button class="slds-m-top_small" label="Cadastrar Cliente" onclick="{!c. criarRegistro}"/>
+
+    </lightning:recordEditForm>
+
+
+    
+    
+
+    
+</aura:component>	

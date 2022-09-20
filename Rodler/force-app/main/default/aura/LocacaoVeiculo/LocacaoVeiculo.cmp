@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable, force:hasRecordId" access="global" controller="LocacaoVeiculo">
+    <aura:attribute name="cliente" type="Id" />
+    <aura:attribute name="veiculo" type="Id" />
+    <aura:attribute name="sede" type="Id" />
+    <aura:attribute name="quantos_dias" type="Integer" />
+
+    <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Atividade__c" recordTypeId="0124x000000a08FAAQ">
+        
+        <lightning:inputField fieldName="Cliente__c" value="{!v.cliente}"/>
+        <lightning:inputField fieldName="Veiculo__c" value="{!v.veiculo}"/>
+        <lightning:inputField fieldName="Sede__c" value="{!v.sede}" />
+        <lightning:inputField fieldName="Quantos_dias__c" value="{!v.quantos_dias}"/>
+
+
+        <lightning:button class="slds-m-top_small" label="Processar Locação" onclick="{!c.pegar}" />
+    </lightning:recordEditForm>
+
+</aura:component>	

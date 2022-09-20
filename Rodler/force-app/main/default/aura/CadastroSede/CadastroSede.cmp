@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable, force:hasRecordId" access="global" controller="CadastroSede">
+    <aura:attribute name="nomeSede" type="String" />
+    <aura:attribute name="endereco" type="String" />
+    
+    <lightning:navigation aura:id="navService"/>
+
+    <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Atividade__c">
+        
+        <lightning:inputField fieldName="Name" value="{!v.nomeSede}"/>
+        <lightning:inputField fieldName="Enderecoo__c" value="{!v.endereco}"/>
+    
+
+
+        <lightning:button class="slds-m-top_small" label="Cadastrar Sede" onclick="{!c.pegar}" />
+    </lightning:recordEditForm>
+
+</aura:component>	

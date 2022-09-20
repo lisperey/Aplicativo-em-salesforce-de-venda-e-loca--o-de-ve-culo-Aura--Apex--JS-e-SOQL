@@ -1,0 +1,27 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable, force:hasRecordId" access="global" controller="CadastroVeiculo">
+    
+    <aura:attribute name="modelo" type="String" />
+    <aura:attribute name="marca" type="String" />
+    <aura:attribute name="nivel" type="String" />
+    <aura:attribute name="sede" type="Id" />
+    <aura:attribute name="estoqueVenda" type="Integer" />
+    <aura:attribute name="estoqueLocacao" type="Integer" />
+    <aura:attribute name="record" type="Object"/>
+   
+    <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Atividade__c">
+       
+        <lightning:inputField  fieldName="Modelo__c" value="{!v.modelo}" />
+        <lightning:inputField  fieldName="Marca__c" value="{!v.marca}"/>
+        <lightning:inputField  fieldName="Nivel__c" value="{!v.nivel}" />
+        <lightning:inputField  fieldName="Estoque_Venda__c" value= "{!v.estoqueVenda}"/>
+        <lightning:inputField  fieldName="Estoque_Locacao__c" value= "{!v.estoqueLocacao}"/>
+        <lightning:inputField  fieldName="Sede__c" value="{!v.sede}" />
+
+            
+
+        <lightning:button class="slds-m-top_small"  label="Cadastrar Veículo" onclick="{!c.criarRegistro}" />
+        </lightning:recordEditForm>
+
+ 
+
+</aura:component>

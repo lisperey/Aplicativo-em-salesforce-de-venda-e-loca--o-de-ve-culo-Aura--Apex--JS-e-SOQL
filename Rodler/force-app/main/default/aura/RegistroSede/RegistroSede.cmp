@@ -1,0 +1,25 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="ResgistroSedes">
+
+    <aura:attribute type="List"  name="contas" />
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute type="List"  name="registros" />
+    <aura:handler name="init" value="{!this}" action="{! c.buscarRegistro  }"/>
+    <aura:handler event="force:refreshView" action="{! c.buscarRegistro  }" />
+    <aura:import library="lightning:confirm" property="LightningConfirm" />
+    <lightning:button label="Deletar" onclick="{! c.enviar  }"/>
+
+    <div style="height: 300px;">
+        <lightning:datatable
+        keyField="Id"
+        data="{! v.contas }"
+        columns="{! v.columns }"
+        onrowselection="{!c.marcarRegistro}"
+        onsave="{! c.salvarAtualizacao }"
+                  />
+
+    </div>
+    
+    
+    
+
+</aura:component>	
